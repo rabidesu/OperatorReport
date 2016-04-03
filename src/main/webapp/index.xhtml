@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="/css/materialize.min.css" type="text/css" rel="stylesheet"/>
+</h:head>
+<h:body>
+    <div class="row">
+        <div class="col s4 offset-s4 center">
+
+            <h4>Select tariff for report: </h4>
+
+        <h:form>
+                <h:selectOneMenu value="#{report.selectedTariffId}" styleClass="form-control">
+                    <f:selectItems value="#{report.allTariffs}" var="tariff"
+                                   itemValue="#{tariff.id}" itemLabel="#{tariff.name}"/>
+                </h:selectOneMenu>
+            <br/>
+            <h:commandButton action="${report.generateReport()}" styleClass="btn waves-effect waves-light orange" value="Generate Report"/>
+        </h:form>
+        </div>
+    </div>
+
+</h:body>
+<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+</html>

@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+<h1>Error</h1>
+<h2>Failed some actions</h2>
+<br />
+<h:outputText value="Error Code: #{errorsHandler.statusCode}"/>
+<br />
+<h:outputText value="Error Desscription: #{errorsHandler.message}"/>
+<br />
+<h:outputText value="Exception Type: #{errorsHandler.exceptionType}"/>
+<br />
+<h:outputText value="Exception Calss: #{errorsHandler.exception}"/>
+<br />
+<h:outputText value="Request URI : #{errorsHandler.requestURI}"/>
+</h:body>
+</html>
